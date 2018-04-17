@@ -109,8 +109,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x6a;
-        pchMessageStart[1] = 0xb1;
+            //pchMessageStart[0] = 0x6a;
+            //pchMessageStart[1] = 0xb1;
+        pchMessageStart[0] = 0x7b;
+        pchMessageStart[1] = 0xc2;
         pchMessageStart[2] = 0x9c;
         pchMessageStart[3] = 0xd5;
         vAlertPubKey = ParseHex("044513449073a8efe161dc42e7c07c61c4a8f59297dc8ebacbc2f77345084d058399022bc6a0db0719739f183d14b04893fb78c3b9bd9a3f88ecf8ea06adae99fe");
@@ -218,8 +220,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1502280000; // Aug 9th, 2017
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1533816000; // Aug 9th, 2018
 
-        pchMessageStart[0] = 0x70;
-        pchMessageStart[1] = 0xa7;
+        pchMessageStart[0] = 0x60;
+        pchMessageStart[1] = 0xb7;
+            //pchMessageStart[0] = 0x70;
+            //pchMessageStart[1] = 0xa7;
         pchMessageStart[2] = 0x7d;
         pchMessageStart[3] = 0xd6;
         vAlertPubKey = ParseHex("04f9e05c65b8cf20e31464d7f35504b62999f845c9242bc6b1bcd1993c643e3ca40527a13de58afa831dccdeacae82b39c01602daf3a7f4151032f5dacefa36932");
@@ -319,8 +323,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 999999999999ULL;
 
-        pchMessageStart[0] = 0x76;
-        pchMessageStart[1] = 0x9d;
+        //pchMessageStart[0] = 0x76;
+        //pchMessageStart[1] = 0x9d;
+            pchMessageStart[0] = 0x70;
+            pchMessageStart[1] = 0x77;
         pchMessageStart[2] = 0x5e;
         pchMessageStart[3] = 0xd7;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
