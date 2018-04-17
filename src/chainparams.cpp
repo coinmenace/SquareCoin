@@ -85,7 +85,8 @@ public:
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 2 * 2 * 60; // Proton: 1 hour, 2 blocks
-        consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
+        //consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Proton: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -206,7 +207,8 @@ public:
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 60 * 60; // Proton: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
+        //consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Proton: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -311,7 +313,8 @@ public:
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 60 * 60; // Proton: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
+        //consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Proton: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -325,8 +328,8 @@ public:
 
         //pchMessageStart[0] = 0x76;
         //pchMessageStart[1] = 0x9d;
-            pchMessageStart[0] = 0x70;
-            pchMessageStart[1] = 0x77;
+        pchMessageStart[0] = 0x70;
+        pchMessageStart[1] = 0x77;
         pchMessageStart[2] = 0x5e;
         pchMessageStart[3] = 0xd7;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
