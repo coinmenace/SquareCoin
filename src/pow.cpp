@@ -247,7 +247,9 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     arith_uint256 bnTarget;
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
-
+    LogPrintf("POW Hash 0 block %s.\n", hash.GetHex());
+    LogPrintf("POW Hash block %s.\n", UintToArith256(hash).ToString());
+    LogPrintf("POW Hash block %s.\n", bnTarget.ToString());
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
         return error("CheckProofOfWork(): nBits below minimum work");
