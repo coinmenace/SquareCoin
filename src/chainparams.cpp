@@ -121,7 +121,7 @@ public:
         uint32_t nNonce = 1648566;
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
-        CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -230,7 +230,7 @@ public:
         uint32_t nNonce = 21635;
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
-        CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
         genesis = CreateGenesisBlock(1513728000, 21635, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -330,7 +330,7 @@ public:
         uint32_t nNonce = 3;
         uint32_t nBits = 0x207fffff;
         int32_t nVersion = 1;
-        CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
 
         consensus.hashGenesisBlock = genesis.GetHash();
