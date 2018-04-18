@@ -134,7 +134,7 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
+        assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
         //assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
 
 
