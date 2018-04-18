@@ -126,13 +126,13 @@ public:
         uint32_t nNonce = 1648566;
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
-        const CAmount& genesisReward = 50 * COIN;
-        //const CAmount& genesisReward = 5000 * COIN;
+        //const CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000e1728b630fd83aecbc51546c7915fffb7d3c897b5fd8c4b14043070b7f0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x33a98e8f8089165dc24358b01d52dd740011bdbffad052d51d3ac3588af2f487"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x00000e1728b630fd83aecbc51546c7915fffb7d3c897b5fd8c4b14043070b7f0"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x33a98e8f8089165dc24358b01d52dd740011bdbffad052d51d3ac3588af2f487"));
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
         vSeeds.push_back(CDNSSeedData("reef2", "138.68.91.38"));
