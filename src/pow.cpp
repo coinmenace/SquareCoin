@@ -249,9 +249,10 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
     LogPrintf("CheckProofOfWork 1 %s.\n", hash.GetHex());
     LogPrintf("CheckProofOfWork 2 %f.\n", UintToArith256(hash).getdouble());
+
+    LogPrintf("CheckProofOfWork 5 %s.\n", params.hashGenesisBlock.GetHex());
     LogPrintf("CheckProofOfWork 3 %f.\n", bnTarget.getdouble());
     LogPrintf("CheckProofOfWork 4 %d.\n", nBits);
-    LogPrintf("CheckProofOfWork 5 %s.\n", params.hashGenesisBlock.GetHex());
 
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
