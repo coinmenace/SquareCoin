@@ -251,8 +251,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
         return error("CheckProofOfWork(): nBits below minimum work");
     LogPrintf("CheckProofOfWork 1 %s.\n", hash.GetHex());
-    LogPrintf("CheckProofOfWork 2 %s.\n", UintToArith256(hash).ToString());
-    LogPrintf("CheckProofOfWork 3 %s.\n", bnTarget.ToString());
+    LogPrintf("CheckProofOfWork 2 %f.\n", UintToArith256(hash).getdouble());
+    LogPrintf("CheckProofOfWork 3 %f.\n", bnTarget.getdouble());
     LogPrintf("CheckProofOfWork 4 %d.\n", nBits);
     // Check proof of work matches claimed amount
     if (UintToArith256(hash) > bnTarget)
