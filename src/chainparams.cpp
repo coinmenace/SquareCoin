@@ -35,8 +35,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(txNew);
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
-    LogPrintf("genesis 1 %s.\n", genesis.GetHash().GetHex());
-    LogPrintf("genesis 2 %s.\n", genesis.hashMerkleRoot.GetHex());
+    LogPrintf("genesis hash %s.\n", genesis.GetHash().GetHex());
+    LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
 
     return genesis;
 }
