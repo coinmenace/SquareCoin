@@ -35,8 +35,6 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(txNew);
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
-    LogPrintf("Genesis Hash  %s.\n", genesis.GetHash().GetHex());
-    LogPrintf("hashMerkleRoot %s.\n", genesis.hashMerkleRoot.ToString());
     return genesis;
 }
 
@@ -136,8 +134,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
-        //assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
+        assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
+        assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
 
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
