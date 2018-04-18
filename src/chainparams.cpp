@@ -35,7 +35,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(txNew);
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
-    LogPrintf("genesis hash %s.\n", genesis.GetHash().GetHex());
+    LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
     LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
 
     return genesis;
@@ -129,6 +129,7 @@ public:
         //uint32_t nNonce = 1648566;
         uint32_t nTime = 1524039463;
         uint32_t nNonce = 1638766;
+        //uint32_t nBits = 0x1e0ffff0;
         uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
         //const CAmount& genesisReward = 50 * COIN;
@@ -137,7 +138,7 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
-        assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
         //assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
 
 
