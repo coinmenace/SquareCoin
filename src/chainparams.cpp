@@ -35,8 +35,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(txNew);
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
-    LogPrintf("Genesis Hash  %s.\n", genesis.GetHash().GetHex());
-    LogPrintf("hashMerkleRoot %s.\n", genesis.hashMerkleRoot.ToString());
+    //LogPrintf("Genesis Hash  %s.\n", genesis.GetHash().GetHex());
+    //LogPrintf("hashMerkleRoot %s.\n", genesis.hashMerkleRoot.ToString());
     return genesis;
 }
 
@@ -47,8 +47,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    //const char* pszTimestamp = "Reef coin will start 18 April 2018";
-    const char* pszTimestamp = "Proton coin will start 25 Dec 2017";
+    const char* pszTimestamp = "Reef coin will start 18 April 2018";
+    //const char* pszTimestamp = "Proton coin will start 25 Dec 2017";
     const CScript genesisOutputScript = CScript() << ParseHex("040a3ada5ba6280b99f49a92ba47221e6a72af844ec49d0c8bbdae1ec09a4c79b22e42eefe670ae04490556f91780eb57de76493d020c91d0c421c2fa052b28a2b") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -137,8 +137,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         //assert(consensus.hashGenesisBlock == uint256S("0x00000e1728b630fd83aecbc51546c7915fffb7d3c897b5fd8c4b14043070b7f0"));
         //assert(genesis.hashMerkleRoot == uint256S("0x33a98e8f8089165dc24358b01d52dd740011bdbffad052d51d3ac3588af2f487"));
-        //assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
+        assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
+        assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
         vSeeds.push_back(CDNSSeedData("reef2", "138.68.91.38"));
