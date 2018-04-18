@@ -129,8 +129,8 @@ public:
         uint32_t nNonce = 1638766;
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
-        //const CAmount& genesisReward = 50 * COIN;
-        const CAmount& genesisReward = 5000 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
+        //const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
 
         consensus.hashGenesisBlock = genesis.GetHash();
