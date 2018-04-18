@@ -47,7 +47,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Proton coin will start 25 Dec 2017";
+    const char* pszTimestamp = "Reef coin will start 18 April 2018";
     const CScript genesisOutputScript = CScript() << ParseHex("040a3ada5ba6280b99f49a92ba47221e6a72af844ec49d0c8bbdae1ec09a4c79b22e42eefe670ae04490556f91780eb57de76493d020c91d0c421c2fa052b28a2b") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -125,8 +125,8 @@ public:
         nPruneAfterHeight = 100000;
         //uint32_t nTime = 1514160000;
         //uint32_t nNonce = 1648566;
-        uint32_t nTime = 1514160000;
-        uint32_t nNonce = 1648566;
+        uint32_t nTime = 1524039463;
+        uint32_t nNonce = 1638766;
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
         //const CAmount& genesisReward = 50 * COIN;
@@ -239,12 +239,15 @@ public:
         nDefaultPort = 23244;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nPruneAfterHeight = 1000;
-        uint32_t nTime = 1513728000;
-        uint32_t nNonce = 21635;
+        //uint32_t nTime = 1513728000;
+        //uint32_t nNonce = 21635;
+        uint32_t nTime = 1524039523;
+        uint32_t nNonce = 31635;
+
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
-        const CAmount& genesisReward = 50 * COIN;
-        //const CAmount& genesisReward = 5000 * COIN;
+        //const CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(1513728000, 21635, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -344,12 +347,15 @@ public:
         //nDefaultPort = 17617;
         nDefaultPort = 23144;
         nPruneAfterHeight = 1000;
-        uint32_t nTime = 1513814400;
-        uint32_t nNonce = 3;
+        //uint32_t nTime = 1513814400;
+        //uint32_t nNonce = 50;
+        uint32_t nTime = 1524039723;
+        uint32_t nNonce = 490;
+
         uint32_t nBits = 0x207fffff;
         int32_t nVersion = 1;
-        const CAmount& genesisReward = 50 * COIN;
-        //const CAmount& genesisReward = 5000 * COIN;
+        //const CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
 
         consensus.hashGenesisBlock = genesis.GetHash();
