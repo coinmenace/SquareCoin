@@ -249,7 +249,7 @@ std::string GetThreadName();
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("proton-%s", name);
+    std::string s = strprintf("reef-%s", name);
     RenameThread(s.c_str());
     try
     {

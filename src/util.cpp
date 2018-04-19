@@ -270,8 +270,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "proton" is a composite category enabling all Proton-related debug output
-            if(ptrCategory->count(string("proton"))) {
+            // "reef" is a composite category enabling all Proton-related debug output
+            if(ptrCategory->count(string("reef"))) {
                 ptrCategory->insert(string("privatesend"));
                 ptrCategory->insert(string("instantsend"));
                 ptrCategory->insert(string("masternode"));
@@ -495,7 +495,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "proton";
+    const char* pszModule = "reef";
 #endif
     if (pex)
         return strprintf(
@@ -518,7 +518,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\ProtonCore
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\ProtonCore
     // Mac: ~/Library/Application Support/ProtonCore
-    // Unix: ~/.protoncore
+    // Unix: ~/.reefcore
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "ReefCore";
