@@ -1,5 +1,5 @@
-/* src/config/proton-config.h.  Generated from proton-config.h.in by configure.  */
-/* src/config/proton-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/reef-config.h.  Generated from reef-config.h.in by configure.  */
+/* src/config/reef-config.h.in.  Generated from configure.ac by autoheader.  */
 
 #ifndef PROTON_CONFIG_H
 
