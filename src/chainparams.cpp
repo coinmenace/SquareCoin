@@ -138,8 +138,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
-        assert(consensus.hashGenesisBlock == uint256S("0xd5b5958dc2105819e17f4e72c4b76d0dd01be09ca17f7599e20e77dae723ae4c"));
-        //assert(genesis.hashMerkleRoot == uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
+        //assert(consensus.hashGenesisBlock == uint256S("0xd5b5958dc2105819e17f4e72c4b76d0dd01be09ca17f7599e20e77dae723ae4c"));
+        //assert(genesis.hashMerkleRoot ==     uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
 
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
