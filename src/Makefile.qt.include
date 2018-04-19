@@ -99,10 +99,10 @@ QT_MOC = \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_proton.cpp
-QT_QRC = qt/proton.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_proton_locale.cpp
-QT_QRC_LOCALE = qt/proton_locale.qrc
+QT_QRC_CPP = qt/qrc_reef.cpp
+QT_QRC = qt/reef.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_reef_locale.cpp
+QT_QRC_LOCALE = qt/reef_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
