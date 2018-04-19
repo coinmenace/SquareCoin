@@ -436,40 +436,40 @@ endif
 reefd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
 # reef-cli binary #
-proton_cli_SOURCES = reef-cli.cpp
-proton_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-proton_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-proton_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+reef_cli_SOURCES = reef-cli.cpp
+reef_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+reef_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+reef_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-proton_cli_SOURCES += reef-cli-res.rc
+reef_cli_SOURCES += reef-cli-res.rc
 endif
 
-proton_cli_LDADD = \
+reef_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-proton_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+reef_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# proton-tx binary #
-proton_tx_SOURCES = reef-tx.cpp
-proton_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-proton_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-proton_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# reef-tx binary #
+reef_tx_SOURCES = reef-tx.cpp
+reef_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+reef_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+reef_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-proton_tx_SOURCES += reef-tx-res.rc
+reef_tx_SOURCES += reef-tx-res.rc
 endif
 
-proton_tx_LDADD = \
+reef_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-proton_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+reef_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #
