@@ -59,11 +59,11 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += reef-cli proton-tx
+  bin_PROGRAMS += reef-cli reef-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# proton core #
+# reef core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addressindex.h \
@@ -453,13 +453,13 @@ proton_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # proton-tx binary #
-proton_tx_SOURCES = proton-tx.cpp
+proton_tx_SOURCES = reef-tx.cpp
 proton_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 proton_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 proton_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-proton_tx_SOURCES += proton-tx-res.rc
+proton_tx_SOURCES += reef-tx-res.rc
 endif
 
 proton_tx_LDADD = \
