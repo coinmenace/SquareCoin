@@ -55,11 +55,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += protond
+  bin_PROGRAMS += reefd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += proton-cli proton-tx
+  bin_PROGRAMS += reef-cli proton-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -191,7 +191,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between protond and proton-qt
+# server: shared between reefd and reef-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -249,7 +249,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between protond and proton-qt, but only linked
+# wallet: shared between reefd and reef-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -338,7 +338,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
-# common: shared between protond, and proton-qt and non-server tools
+# common: shared between reefd, and reef-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -395,7 +395,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between proton-cli and proton-qt
+# cli: shared between reef-cli and reef-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -406,16 +406,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-protond_SOURCES = protond.cpp
-protond_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-protond_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-protond_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+reefd_SOURCES = reefd.cpp
+reefd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+reefd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+reefd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-protond_SOURCES += protond-res.rc
+reefd_SOURCES += reefd-res.rc
 endif
 
-protond_LDADD = \
+reefd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -426,23 +426,23 @@ protond_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-protond_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+reefd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-protond_LDADD += libbitcoin_wallet.a
+reefd_LDADD += libbitcoin_wallet.a
 endif
 
-protond_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+reefd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# proton-cli binary #
-proton_cli_SOURCES = proton-cli.cpp
+# reef-cli binary #
+proton_cli_SOURCES = reef-cli.cpp
 proton_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 proton_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 proton_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-proton_cli_SOURCES += proton-cli-res.rc
+proton_cli_SOURCES += reef-cli-res.rc
 endif
 
 proton_cli_LDADD = \
