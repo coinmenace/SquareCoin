@@ -139,7 +139,7 @@ public:
         LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
         //
         assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
-        //assert(genesis.hashMerkleRoot ==     uint256S("0x00000ffff0000000000000000000000000000000000000000000000000000000"));
+        assert(genesis.hashMerkleRoot ==     uint256S("0x97d53c6a7a875e99c6e3b0c7dcbb3a049367fa33b9bef7f63fa060b9453ada88"));
 
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
