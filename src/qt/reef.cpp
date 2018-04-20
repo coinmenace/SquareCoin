@@ -198,7 +198,7 @@ private:
     void handleRunawayException(const std::exception *e);
 };
 
-/** Main Proton application object */
+/** Main Reef application object */
 class BitcoinApplication: public QApplication
 {
     Q_OBJECT
@@ -538,7 +538,7 @@ void BitcoinApplication::shutdownResult(int retval)
 
 void BitcoinApplication::handleRunawayException(const QString &message)
 {
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. Proton Core can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. Reef Core can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(EXIT_FAILURE);
 }
 
@@ -665,7 +665,7 @@ int main(int argc, char *argv[])
     /// 7a. parse masternode.conf
     std::string strErr;
     if(!masternodeConfig.read(strErr)) {
-        QMessageBox::critical(0, QObject::tr("Proton Core"),
+        QMessageBox::critical(0, QObject::tr("Reef Core"),
                               QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
         return EXIT_FAILURE;
     }
@@ -714,7 +714,7 @@ int main(int argc, char *argv[])
         app.createWindow(networkStyle.data());
         app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
-        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("Proton Core didn't yet exit safely..."), (HWND)app.getMainWinId());
+        WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("Reef Core didn't yet exit safely..."), (HWND)app.getMainWinId());
 #endif
         app.exec();
         app.requestShutdown();

@@ -87,9 +87,9 @@ public:
         consensus.BIP34Height = 227931; // FIX
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 2 * 2 * 60; // Proton: 1 hour, 2 blocks
-        //consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
-        consensus.nPowTargetSpacing = 1 * 60; // Proton: 2 minutes
+        consensus.nPowTargetTimespan = 2 * 2 * 60; // Reef: 1 hour, 2 blocks
+        //consensus.nPowTargetSpacing = 2 * 60; // Reef: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Reef: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -146,17 +146,17 @@ public:
         vSeeds.push_back(CDNSSeedData("reef2", "138.68.91.38"));
         vSeeds.push_back(CDNSSeedData("dnsseed", "159.89.90.181"));
 
-        // Proton addresses start with 'P'
+        // Reef addresses start with 'P'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
-        // Proton script addresses start with '7'
+        // Reef script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,15);
-        // Proton private keys start with '7' or 'P' (?)
+        // Reef private keys start with '7' or 'P' (?)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,192);
-        // Proton BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Reef BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Proton BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Reef BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Proton BIP44 coin type is '5'
+        // Reef BIP44 coin type is '5'
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x05).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -217,9 +217,9 @@ public:
         consensus.BIP34Height = 21111; // FIX
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 60 * 60; // Proton: 1 hour
-        //consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
-        consensus.nPowTargetSpacing = 1 * 60; // Proton: 2 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // Reef: 1 hour
+        //consensus.nPowTargetSpacing = 2 * 60; // Reef: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Reef: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -262,17 +262,17 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        // Testnet Proton addresses start with 'n'
+        // Testnet Reef addresses start with 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112);
-        // Testnet Proton script addresses start with '5'
+        // Testnet Reef script addresses start with '5'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,10);
         // Testnet private keys start with '5' or 'n' (Bitcoin defaults) (?)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,240);
-        // Testnet Proton BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Reef BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Proton BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Reef BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Proton BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Reef BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -328,9 +328,9 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 60 * 60; // Proton: 1 hour
-        //consensus.nPowTargetSpacing = 2 * 60; // Proton: 2 minutes
-        consensus.nPowTargetSpacing = 1 * 60; // Proton: 2 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // Reef: 1 hour
+        //consensus.nPowTargetSpacing = 2 * 60; // Reef: 2 minutes
+        consensus.nPowTargetSpacing = 1 * 60; // Reef: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -385,17 +385,17 @@ public:
             0,
             0
         };
-        // Regtest Proton addresses start with 'n'
+        // Regtest Reef addresses start with 'n'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,112);
-        // Regtest Proton script addresses start with '5'
+        // Regtest Reef script addresses start with '5'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,10);
         // Regtest private keys start with '5' or 'c' (Bitcoin defaults) (?)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,240);
-        // Regtest Proton BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Reef BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Proton BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Reef BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Proton BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Reef BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
    }
 };
