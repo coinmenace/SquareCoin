@@ -131,15 +131,15 @@ public:
         uint32_t nBits = 0x1e0ffff0;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
-        //const CAmount& genesisReward = 50 * COIN;
-        const CAmount& genesisReward = 5000 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
+        //const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
         LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
         //
-        assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
-        assert(genesis.hashMerkleRoot ==     uint256S("0x97d53c6a7a875e99c6e3b0c7dcbb3a049367fa33b9bef7f63fa060b9453ada88"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x88c36f0e5892106d9b5c1041623ce3524192814e3c3fab502f9b1fa4e0658cec"));
+        //assert(genesis.hashMerkleRoot ==     uint256S("0x97d53c6a7a875e99c6e3b0c7dcbb3a049367fa33b9bef7f63fa060b9453ada88"));
 
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
@@ -251,8 +251,8 @@ public:
 
         uint32_t nBits = 0x1e0ffff0;
         int32_t nVersion = 1;
-        //const CAmount& genesisReward = 50 * COIN;
-        const CAmount& genesisReward = 5000 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
+        //const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
 
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -359,8 +359,8 @@ public:
 
         uint32_t nBits = 0x207fffff;
         int32_t nVersion = 1;
-        //const CAmount& genesisReward = 50 * COIN;
-        const CAmount& genesisReward = 5000 * COIN;
+        const CAmount& genesisReward = 50 * COIN;
+        //const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
 
         consensus.hashGenesisBlock = genesis.GetHash();
