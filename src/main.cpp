@@ -3673,6 +3673,7 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
 
 
 
+
     // Check proof of work matches claimed amount
     if (fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits, Params().GetConsensus()))
         return state.DoS(5000, error("CheckBlockHeader(): proof of work failed"),REJECT_INVALID, "high-hash");
@@ -3685,6 +3686,11 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
 
     return true;
 }
+
+
+
+
+
 
 bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bool fCheckMerkleRoot)
 {
