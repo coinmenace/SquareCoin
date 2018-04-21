@@ -1699,7 +1699,8 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
     catch (const std::exception& e) {
         return error("%s: Deserialize or I/O error - %s at %s", __func__, e.what(), pos.ToString());
     }
-
+    LogPrintf("Genesis hash  %s.\n", block.GetHash().GetHex());
+    LogPrintf("Genesis hashMerkleRoot %s.\n", block.hashMerkleRoot.GetHex());
     // Check the header
     if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams))
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());

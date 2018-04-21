@@ -47,7 +47,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Reef coin will start 18 April 2018";
+    const char* pszTimestamp = "Reef coin will start 21 April 2018";
     //const char* pszTimestamp = "Proton coin will start 25 Dec 2017";
     const CScript genesisOutputScript = CScript() << ParseHex("040a3ada5ba6280b99f49a92ba47221e6a72af844ec49d0c8bbdae1ec09a4c79b22e42eefe670ae04490556f91780eb57de76493d020c91d0c421c2fa052b28a2b") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
@@ -131,15 +131,15 @@ public:
         uint32_t nBits = 0x1e0ffff0;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
-        const CAmount& genesisReward = 50 * COIN;
-        //const CAmount& genesisReward = 5000 * COIN;
+        //const CAmount& genesisReward = 50 * COIN;
+        const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
         LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
         LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
         //
-        assert(consensus.hashGenesisBlock == uint256S("0x9e9c6f5ebb2c43c9b4e76890aa1e56df36632a0ab69d997c692640d716785482"));
-        assert(genesis.hashMerkleRoot ==    uint256S("0xedc7739d6372f7c2b711d93a2f3709209d2a18391e8c1647263e82f46d8cf09f"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x9e9c6f5ebb2c43c9b4e76890aa1e56df36632a0ab69d997c692640d716785482"));
+        //assert(genesis.hashMerkleRoot ==    uint256S("0xedc7739d6372f7c2b711d93a2f3709209d2a18391e8c1647263e82f46d8cf09f"));
 
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
