@@ -3671,12 +3671,12 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool fCheckPOW)
 {
 
-    LogPrintf("1 Genesis hash  %s.\n", block.GetHash().GetHex());
-    LogPrintf("1cGenesis hashMerkleRoot %s.\n", block.hashMerkleRoot.GetHex());
+    LogPrintf("NBits %s.\n", block.nBits.);
+
     // Check proof of work matches claimed amount
     if (fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits, Params().GetConsensus()))
-        return state.DoS(50, error("CheckBlockHeader(): proof of work failed"),
-                         REJECT_INVALID, "high-hash");
+        return state.DoS(5000, error("CheckBlockHeader(): proof of work failed"),REJECT_INVALID, "high-hash");
+        //return state.DoS(50, error("CheckBlockHeader(): proof of work failed"),REJECT_INVALID, "high-hash");
 
     // Check timestamp
     if (block.GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
