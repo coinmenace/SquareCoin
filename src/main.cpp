@@ -1699,8 +1699,8 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, const Consensus:
     catch (const std::exception& e) {
         return error("%s: Deserialize or I/O error - %s at %s", __func__, e.what(), pos.ToString());
     }
-    LogPrintf("Genesis hash  %s.\n", block.GetHash().GetHex());
-    LogPrintf("Genesis hashMerkleRoot %s.\n", block.hashMerkleRoot.GetHex());
+    LogPrintf("0 Genesis hash  %s.\n", block.GetHash().GetHex());
+    LogPrintf("0 Genesis hashMerkleRoot %s.\n", block.hashMerkleRoot.GetHex());
     // Check the header
     if (!CheckProofOfWork(block.GetHash(), block.nBits, consensusParams))
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
@@ -3671,8 +3671,8 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool fCheckPOW)
 {
 
-    LogPrintf("Genesis hash  %s.\n", block.GetHash().GetHex());
-    LogPrintf("Genesis hashMerkleRoot %s.\n", block.hashMerkleRoot.GetHex());
+    LogPrintf("1 Genesis hash  %s.\n", block.GetHash().GetHex());
+    LogPrintf("1cGenesis hashMerkleRoot %s.\n", block.hashMerkleRoot.GetHex());
     // Check proof of work matches claimed amount
     if (fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits, Params().GetConsensus()))
         return state.DoS(50, error("CheckBlockHeader(): proof of work failed"),
