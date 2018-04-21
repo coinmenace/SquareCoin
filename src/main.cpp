@@ -3671,7 +3671,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool fCheckPOW)
 {
 
-    LogPrintf("NBits %s.\n", block.nBits.);
+    LogPrintf("NBits %s.\n", block.nBits.GetHex());
 
     // Check proof of work matches claimed amount
     if (fCheckPOW && !CheckProofOfWork(block.GetHash(), block.nBits, Params().GetConsensus()))
