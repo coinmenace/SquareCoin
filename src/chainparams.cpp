@@ -127,7 +127,7 @@ public:
         //uint32_t nTime = 1514160000;
         //uint32_t nNonce = 1648566;
         uint32_t nTime = 1524039463;
-        uint32_t nNonce = 1638766;
+        uint32_t nNonce = 1648566;
         uint32_t nBits = 0x1e0ffff0;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
