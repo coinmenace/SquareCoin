@@ -127,7 +127,7 @@ public:
         //uint32_t nTime = 1514160000;
         //uint32_t nNonce = 1648566;
         uint32_t nTime = 1524039463;
-        uint32_t nNonce = 1648566;
+        uint32_t nNonce = 2759422;
         uint32_t nBits = 0x1e0ffff0;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
@@ -165,8 +165,8 @@ public:
         //
         //assert(consensus.hashGenesisBlock == uint256S("0x1437228ca7167c274c510b274afa0135735b6363eabeb029740b6a10e6910b93"));
         //assert(genesis.hashMerkleRoot ==    uint256S("0x18e311e6dff9dd0f75f98cca64b199e691cfeddc1adb225e81fb46f21a89f279"));
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot ==    uint256S("0x"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x"));
+        //assert(genesis.hashMerkleRoot ==    uint256S("0x"));
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
         vSeeds.push_back(CDNSSeedData("reef2", "138.68.91.38"));
