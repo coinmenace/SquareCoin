@@ -135,11 +135,14 @@ public:
         const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
-            if(genesis.GetHash() != uint256("0x"))
+            if(genesis.GetHash() != uint256S("0x"))
             {
+                    bool fNegative;
+                    bool fOverflow;
+                    arith_uint256 bigNum;
                     printf("Searching for genesis block...\n");
-                    uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-                    while(uint256(genesis.GetHash()) > hashTarget)
+                    bigNum.SetCompact(genesis.nBits, &fNegative, &fOverflow);
+                    while(UintToArith256(genesis.GetHash()) > bigNum)
                     {
                             ++genesis.nNonce;
                             if (genesis.nNonce == 0)
