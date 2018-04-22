@@ -131,9 +131,6 @@ public:
         uint32_t nBits = 0x1e0ffff0;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
-            block.nTime = 1524039463
-            block.nNonce = 2759422
-            block.GetHash =
         //const CAmount& genesisReward = 50 * COIN;
         const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
