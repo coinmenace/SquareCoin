@@ -128,7 +128,7 @@ public:
         //uint32_t nNonce = 1648566;
         uint32_t nTime = 1524039463;
         uint32_t nNonce = 2759422;
-        uint32_t nBits = 0x1e0ffff0;
+        uint32_t nBits = 504365040;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
         //const CAmount& genesisReward = 50 * COIN;
@@ -156,18 +156,19 @@ public:
                                     printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
                             }
                     }
+                    printf("block.nBits = %u \n", genesis.nBits);
                     printf("block.nTime = %u \n", genesis.nTime);
                     printf("block.nNonce = %u \n", genesis.nNonce);
                     printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+                    printf("block.GetHash = %s\n", genesis.GetHash().GetHex().c_str());
                     printf("block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
             }
         //LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
         //LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
         //
-        //assert(consensus.hashGenesisBlock == uint256S("0x000004360acf9f052dd9887dc78b2e388a534cb31af91c346927245447975615"));
-        //assert(genesis.hashMerkleRoot ==    uint256S("0x18e311e6dff9dd0f75f98cca64b199e691cfeddc1adb225e81fb46f21a89f279"));
-        //assert(consensus.hashGenesisBlock == uint256S("0x"));
-        //assert(genesis.hashMerkleRoot ==    uint256S("0x"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000004360acf9f052dd9887dc78b2e388a534cb31af91c346927245447975615"));
+        assert(genesis.hashMerkleRoot ==    uint256S("0x18e311e6dff9dd0f75f98cca64b199e691cfeddc1adb225e81fb46f21a89f279"));
+         
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
         vSeeds.push_back(CDNSSeedData("reef2", "138.68.91.38"));
