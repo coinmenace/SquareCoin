@@ -135,12 +135,35 @@ public:
         const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
         consensus.hashGenesisBlock = genesis.GetHash();
+            if(genesis.GetHash() != uint256("0x"))
+            {
+                    printf("Searching for genesis block...\n");
+                    uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+                    while(uint256(genesis.GetHash()) > hashTarget)
+                    {
+                            ++genesis.nNonce;
+                            if (genesis.nNonce == 0)
+                            {
+                                    printf("NONCE WRAPPED, incrementing time");
+                                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
+                                    ++genesis.nTime;
+                            }
+                            if (genesis.nNonce % 10000 == 0)
+                            {
+                                    printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                            }
+                    }
+                    printf("block.nTime = %u \n", genesis.nTime);
+                    printf("block.nNonce = %u \n", genesis.nNonce);
+                    printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+            }
         LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
         LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
         //
-        assert(consensus.hashGenesisBlock == uint256S("0x1437228ca7167c274c510b274afa0135735b6363eabeb029740b6a10e6910b93"));
-        assert(genesis.hashMerkleRoot ==    uint256S("0x18e311e6dff9dd0f75f98cca64b199e691cfeddc1adb225e81fb46f21a89f279"));
-
+        //assert(consensus.hashGenesisBlock == uint256S("0x1437228ca7167c274c510b274afa0135735b6363eabeb029740b6a10e6910b93"));
+        //assert(genesis.hashMerkleRoot ==    uint256S("0x18e311e6dff9dd0f75f98cca64b199e691cfeddc1adb225e81fb46f21a89f279"));
+        assert(consensus.hashGenesisBlock == uint256S("0x"));
+        assert(genesis.hashMerkleRoot ==    uint256S("0x"));
 
         vSeeds.push_back(CDNSSeedData("reef1", "159.89.90.181"));
         vSeeds.push_back(CDNSSeedData("reef2", "138.68.91.38"));
