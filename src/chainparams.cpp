@@ -131,6 +131,9 @@ public:
         uint32_t nBits = 0x1e0ffff0;
         //uint32_t nBits = 0x1e0ffff990;
         int32_t nVersion = 1;
+            block.nTime = 1524039463
+            block.nNonce = 2759422
+            block.GetHash =
         //const CAmount& genesisReward = 50 * COIN;
         const CAmount& genesisReward = 5000 * COIN;
         genesis = CreateGenesisBlock(nTime, nNonce, nBits, nVersion, genesisReward);
@@ -159,11 +162,12 @@ public:
                     printf("block.nTime = %u \n", genesis.nTime);
                     printf("block.nNonce = %u \n", genesis.nNonce);
                     printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+                    printf("block.Merkleroot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
             }
-        LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
-        LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
+        //LogPrintf("genesis hash  %s.\n", genesis.GetHash().GetHex());
+        //LogPrintf("genesis hashMerkleRoot %s.\n", genesis.hashMerkleRoot.GetHex());
         //
-        //assert(consensus.hashGenesisBlock == uint256S("0x1437228ca7167c274c510b274afa0135735b6363eabeb029740b6a10e6910b93"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x000004360acf9f052dd9887dc78b2e388a534cb31af91c346927245447975615"));
         //assert(genesis.hashMerkleRoot ==    uint256S("0x18e311e6dff9dd0f75f98cca64b199e691cfeddc1adb225e81fb46f21a89f279"));
         //assert(consensus.hashGenesisBlock == uint256S("0x"));
         //assert(genesis.hashMerkleRoot ==    uint256S("0x"));
